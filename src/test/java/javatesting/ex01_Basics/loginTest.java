@@ -36,6 +36,18 @@ public class loginTest extends BaseTest {
 
     }
 
+    @Test
+    public void testLoginInvalidEmail(){
+        String baseUrl = ConfigReader.get("url");
+        String email = ConfigReader.get("invalidEmail");
+        String password = ConfigReader.get("password");
+
+        loginPage.navigateTo(baseUrl);
+//        System.out.println(page.title());
+        loginPage.login(email, password );
+        Assert.assertEquals(loginPage.getInvalidValidationMsg(),"Your email or password is incorrect!");
+    }
+
     @AfterClass
     public void cleanup() {
         teardown();

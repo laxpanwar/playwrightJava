@@ -8,6 +8,8 @@ public class HomePage {
     //Locators
     private Locator productBtn;
     private Locator contactusbtn;
+    private Locator testCasebtn;
+
 
     // Constructor
     public HomePage(Page page) {
@@ -18,7 +20,7 @@ public class HomePage {
     private void initLocators() {
         productBtn = page.locator("//a[@href= '/products']");
         contactusbtn = page.locator("//a[@href= '/contact_us']");
-
+        testCasebtn = page.locator("(//a[@href= '/test_cases'])[1]");
 
     }
 
@@ -31,5 +33,10 @@ public class HomePage {
     public ContactUsPage clickontheContactUsBtn(){
         contactusbtn.click();
         return new ContactUsPage(page);
+    }
+
+    public TestCasesPage clickontheTestCaseBtn(){
+        testCasebtn.click();
+        return new TestCasesPage(page);
     }
 }

@@ -13,6 +13,7 @@ public class LoginPage {
     private Locator loginButton;
     private Locator loginLink;
     private Locator logoutBtn;
+    private Locator InvalidValidationMsg;
 
 
     // Constructor
@@ -27,6 +28,7 @@ public class LoginPage {
         loginButton = page.locator("//button[@data-qa='login-button']");
         loginLink = page.locator("//a[@href='/login']");
         logoutBtn = page.locator("//a[normalize-space()='Logout']");
+        InvalidValidationMsg= page.locator(" //p[@style='color: red;']");
     }
 
 
@@ -66,6 +68,8 @@ public class LoginPage {
         return logoutBtn.textContent();
     }
 
-
+    public String getInvalidValidationMsg(){
+        return InvalidValidationMsg.textContent();
+    }
 
 }
