@@ -20,20 +20,13 @@ public class loginTest extends BaseTest {
 
     @Test
     public void testLoginValidUser(){
-//        Playwright playwright = Playwright.create();
-//        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-//        Page page = browser.newPage();
         String baseUrl = ConfigReader.get("url");
         String email = ConfigReader.get("email");
         String password = ConfigReader.get("password");
 
         loginPage.navigateTo(baseUrl);
-//        System.out.println(page.title());
         loginPage.login(email, password );
         Assert.assertEquals(loginPage.getLogoutText()," Logout");
-//        assertEquals(page.title(), "Learn Software Testing & Test Automation");
-//        assertTrue(page.title().contains("Learn Software Testing"));
-
     }
 
     @Test
@@ -43,7 +36,6 @@ public class loginTest extends BaseTest {
         String password = ConfigReader.get("password");
 
         loginPage.navigateTo(baseUrl);
-//        System.out.println(page.title());
         loginPage.login(email, password );
         Assert.assertEquals(loginPage.getInvalidValidationMsg(),"Your email or password is incorrect!");
     }

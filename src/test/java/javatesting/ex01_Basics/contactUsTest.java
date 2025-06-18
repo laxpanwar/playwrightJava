@@ -18,7 +18,6 @@ public class contactUsTest extends BaseTest {
     private ContactUsPage contactUsPage;
 
 
-
     @BeforeClass
     public void init() {
         setup();
@@ -27,15 +26,11 @@ public class contactUsTest extends BaseTest {
 
     @Test
     public void contactSupport() {
-//        Playwright playwright = Playwright.create();
-//        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-//        Page page = browser.newPage();
         String baseUrl = ConfigReader.get("url");
         String email = ConfigReader.get("email");
         String password = ConfigReader.get("password");
 
         loginPage.navigateTo(baseUrl);
-//        System.out.println(page.title());
         homePage = loginPage.login(email, password);
         contactUsPage = homePage.clickontheContactUsBtn();
         contactUsPage.contact_support();

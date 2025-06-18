@@ -24,15 +24,11 @@ public class testCasesTest extends BaseTest {
 
         @Test
         public void testCases () {
-//        Playwright playwright = Playwright.create();
-//        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-//        Page page = browser.newPage();
             String baseUrl = ConfigReader.get("url");
             String email = ConfigReader.get("email");
             String password = ConfigReader.get("password");
 
             loginPage.navigateTo(baseUrl);
-//        System.out.println(page.title());
             homePage = loginPage.login(email, password);
             testCasesPage = homePage.clickontheTestCaseBtn();
             testCasesPage.click_register_user_testcase();

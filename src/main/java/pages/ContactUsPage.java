@@ -60,15 +60,11 @@ public class ContactUsPage {
         });
         click_on_the_submit_btn();
 
-
     }
 
     public String get_success_msg_text(){
             return successMsg.textContent();
     }
-
-
-
 
 
 

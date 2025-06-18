@@ -17,7 +17,6 @@ public class categoriesTest extends BaseTest {
     private CategoriesPage categoriesPage;
 
 
-
     @BeforeClass
     public void init () {
         setup();
