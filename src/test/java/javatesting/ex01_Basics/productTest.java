@@ -25,11 +25,8 @@ public class productTest extends BaseTest {
     @Test
     public void addToCart(){
         String baseUrl = ConfigReader.get("url");
-        String email = ConfigReader.get("email");
-        String password = ConfigReader.get("password");
-
         loginPage.navigateTo(baseUrl);
-        homePage =  loginPage.login(email, password );
+        homePage = loginPage.loginValidCredentials();
         productPage = homePage.clickOnTheProductBtn();
         Assert.assertEquals(ProductPage.getAddedText(),"Your product has been added to cart.");
 

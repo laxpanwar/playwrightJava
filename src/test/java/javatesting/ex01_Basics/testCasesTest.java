@@ -25,13 +25,10 @@ public class testCasesTest extends BaseTest {
         @Test
         public void testCases () {
             String baseUrl = ConfigReader.get("url");
-            String email = ConfigReader.get("email");
-            String password = ConfigReader.get("password");
-
             loginPage.navigateTo(baseUrl);
-            homePage = loginPage.login(email, password);
+            homePage = loginPage.loginValidCredentials();
             testCasesPage = homePage.clickontheTestCaseBtn();
-            testCasesPage.click_register_user_testcase();
+            testCasesPage.clickEachTestCase();
         }
     @AfterClass
     public void cleanup() {

@@ -27,11 +27,8 @@ public class contactUsTest extends BaseTest {
     @Test
     public void contactSupport() {
         String baseUrl = ConfigReader.get("url");
-        String email = ConfigReader.get("email");
-        String password = ConfigReader.get("password");
-
         loginPage.navigateTo(baseUrl);
-        homePage = loginPage.login(email, password);
+        homePage = loginPage.loginValidCredentials();
         contactUsPage = homePage.clickontheContactUsBtn();
         contactUsPage.contact_support();
         Assert.assertEquals(contactUsPage.get_success_msg_text(),"Success! Your details have been submitted successfully.");

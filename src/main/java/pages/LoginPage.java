@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import utils.ConfigReader;
 
 public class LoginPage {
 
@@ -62,6 +63,18 @@ public class LoginPage {
         return new HomePage(page);
 
     }
+
+    public HomePage  loginValidCredentials(){
+//        String baseUrl = ConfigReader.get("url");
+        String email = ConfigReader.get("email");
+        String password = ConfigReader.get("password");
+        clickOnLoginLink();
+        enterUserEmail(email);
+        enterPassword(password);
+        clickLogin();
+        return new HomePage(page);
+    }
+
 
     public String getLogoutText(){
         return logoutBtn.textContent();

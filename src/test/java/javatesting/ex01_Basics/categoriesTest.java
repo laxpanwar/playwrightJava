@@ -26,11 +26,8 @@ public class categoriesTest extends BaseTest {
     @Test
     public void categoriesCases () {
         String baseUrl = ConfigReader.get("url");
-        String email = ConfigReader.get("email");
-        String password = ConfigReader.get("password");
-
         loginPage.navigateTo(baseUrl);
-        homePage = loginPage.login(email, password);
+        homePage = loginPage.loginValidCredentials();
         categoriesPage = homePage.clickontheWomenBtn();
         categoriesPage.clickontheTopsBtn();
         Assert.assertEquals(categoriesPage.getCategoryTitleText(),"Tops Products");
