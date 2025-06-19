@@ -3,6 +3,8 @@ package pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
+import java.util.UUID;
+
 public class ContactUsPage {
         private Page page;
         //Locators
@@ -30,15 +32,21 @@ public class ContactUsPage {
         //methods
 
         public void enter_name(){
-            nameTextField.fill("xyz");
+            String randomName = "test_" + UUID.randomUUID().toString().substring(0, 5);
+            nameTextField.fill(randomName);
         }
 
+
     public void enter_email(){
-        emailTextFiled.fill("abc@g.com");
+        String randomEmail = "user_" + UUID.randomUUID().toString().substring(0, 5) + "@a.com";
+        emailTextFiled.fill(randomEmail);
+
+
     }
 
     public void enter_subject(){
-            subjectTextField.fill("testing");
+        String randomName = "testing" + UUID.randomUUID().toString().substring(0, 5);
+        subjectTextField.fill(randomName);
     }
     public void click_on_the_submit_btn(){
             submitBtn.click();
